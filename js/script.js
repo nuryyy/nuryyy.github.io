@@ -28,6 +28,6 @@ function typeWrite() {
     if (i < message.length) {
         textArea.innerHTML += message.charAt(i);
         i++;
-        setTimeout(typeWrite, 65);
+        setTimeout(typeWrite, 55);
     }
 }
