@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: handlee;
+    font-weight: bold;
+}
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+.onload {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 99;
+    background-color: black;
+}
+.bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-image: url(foto/riverside.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* LOAD */
+.load {
+    z-index: 9;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 1;
+    transition: opacity 1s;
+    overflow: hidden !important;
+}
+.textLoad1,
+.textLoad2 {
+    color: white;
+    margin-block: 5px;
+}
+.switchImg {
+    margin-top: 10px;
+    display: none;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+/* content 1 */
+.bird {
+    position: absolute;
+    top: 50px;
+    z-index: 4;
+    animation: slidebird 8s linear infinite;
+    transform: translateX(-100vw);
+}
+#text {
+    opacity: 0;
+    transform: translateX(-19px);
+    animation: fade 2.8s infinite;
+}
+.bird-instance {
+    animation: upAndDown 1s 1s infinite alternate linear;
+    overflow: visible;
+}
+.bird-instance:nth-child(2),
+.bird-instance:nth-child(3) {
+    position: absolute;
+}
+.bird-instance:nth-child(2) {
+    right: 25px;
+    bottom: -25px;
+}
+.bird-instance:nth-child(3) {
+    left: -80px;
+    top: -29px;
+}
+
+#right-wing {
+    animation: right-wing 1s 1s infinite alternate linear;
+    transform-origin: left;
+}
+#left-wing {
+    animation: left-wing 1s infinite alternate linear;
+    transform-origin: center bottom;
+    transform-box: fill-box;
+}
+
+/* Bird */
+@keyframes slidebird {
+    from {
+        transform: translateX(-100vw) !important;
+    }
+    to {
+        transform: translateX(120vw);
+    }
+}
+@keyframes fade {
+    20% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0, -20px) rotate(-30deg);
+        opacity: 0;
+    }
+}
+@keyframes upAndDown {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(25px);
+    }
+}
+@keyframes right-wing {
+    to {
+        transform: rotateX(171deg);
+    }
+}
+
+@keyframes left-wing {
+    to {
+        transform: rotateX(171deg) rotate(41deg);
+    }
+}
+/* END BIRD */
+
+#world {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+.confetti {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+}
+.content1 {
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    padding-top: 150px;
+    padding-bottom: 30px;
+}
+
+.banner {
+    position: absolute;
+    top: -58px;
+    width: 100%;
+    z-index: 3;
+    animation: sidetoside 1s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55) alternate;
+}
+.content1 .text {
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 339px;
+    font-size: 139%;
+    background-color: white;
+    border-radius: 0 0 19px 19px;
+    color: #1b96d0;
+    box-shadow: 0 7px 8px #0000007a;
+    padding: 9px 5px;
+}
+.foto1,
+.cake {
+    display: block;
+    margin: 0 auto;
+}
+.wrap {
+    animation: goyang 1s infinite cubic-bezier(0.4, 0, 1, 1) alternate;
+}
+.foto1 {
+    width: 80%;
+    max-width: 339px;
+    min-width: 219px;
+    border-radius: 19px 19px 0 0;
+    box-shadow: 0 0px 8px #0000007a;
+}
+
+.content1 .cake {
+    width: 80%;
+    max-width: 500px;
+    margin: 10px auto;
+}
+button {
+    background-image: linear-gradient(to top left, #ff009c, #ff94b4);
+    padding: 7px 20px;
+    margin: 0 auto;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    border: 2px solid white;
+    animation: bounceButton 0.5s ease infinite alternate;
+    display: block;
+    z-index: 3;
+    position: relative;
+}
+
+/* content 2 UTAMA */
+.content2 {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.575);
+    display: none;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.paper {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    min-width: 360px;
+    height: 480px;
+    margin-inline: auto;
+    margin-top: 19vh;
+    background: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transform: translateX(-999px);
+    animation: swipe 1s forwards;
+}
+@keyframes swipe {
+    to {
+        transform: translateX(0);
+    }
+}
+.paper:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    background: radial-gradient(#575450 6px, transparent 7px) repeat-y;
+    background-size: 30px 30px;
+    border-right: 3px solid #d44147;
+    box-sizing: border-box;
+}
+.paper-content {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    bottom: 30px;
+    left: 40px;
+    background: linear-gradient(transparent, transparent 28px, #91d1d3 28px);
+    background-size: 30px 30px;
+}
+.paper-content textarea {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    line-height: 30px;
+    padding: 0 10px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: rgb(0, 0, 0);
+    font-family: "Handlee", cursive;
+    font-weight: bold;
+    font-size: 17px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+.paper-content img:first-child {
+    position: absolute;
+    bottom: 5px;
+    left: 11px;
+    width: 100px;
+    opacity: 0;
+    transform: translateY(19px);
+    animation: stiker 1.5s 5.5s forwards;
+}
+.paper-content img:nth-child(2) {
+    position: absolute;
+    bottom: -39px;
+    right: -99px;
+    width: 100px;
+    animation: nobita 1.5s 5.5s forwards;
+}
+@keyframes stiker {
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+@keyframes nobita {
+    to {
+        right: -19px;
+    }
+}
+
+@keyframes bounceButton {
+    to {
+        transform: translateY(8px);
+    }
+}
+@keyframes sidetoside {
+    to {
+        transform: rotate(-5deg);
+    }
+}
+@keyframes goyang {
+    0% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+@font-face {
+    font-family: handlee;
+    src: url(font/Handlee-Regular.ttf);
+}
