@@ -1,7 +1,8 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     font-family: handlee;
     font-weight: bold;
 }
@@ -37,11 +38,22 @@ body {
     background-color: black;
     position: fixed;
     top: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     opacity: 1;
+    -webkit-transition: opacity 1s;
+    -o-transition: opacity 1s;
     transition: opacity 1s;
     overflow: hidden !important;
 }
@@ -54,23 +66,31 @@ body {
     margin-top: 10px;
     display: none;
     opacity: 0;
-    animation: fadeIn 2s forwards;
+    -webkit-animation: fadeIn 2s forwards;
+            animation: fadeIn 2s forwards;
 }
 /* content 1 */
 .bird {
     position: absolute;
     top: 50px;
     z-index: 4;
-    animation: slidebird 8s linear infinite;
-    transform: translateX(-100vw);
+    -webkit-animation: slidebird 8s linear infinite;
+            animation: slidebird 8s linear infinite;
+    -webkit-transform: translateX(-100vw);
+        -ms-transform: translateX(-100vw);
+            transform: translateX(-100vw);
 }
 #text {
     opacity: 0;
-    transform: translateX(-19px);
-    animation: fade 2.8s infinite;
+    -webkit-transform: translateX(-19px);
+        -ms-transform: translateX(-19px);
+            transform: translateX(-19px);
+    -webkit-animation: fade 2.8s infinite;
+            animation: fade 2.8s infinite;
 }
 .bird-instance {
-    animation: upAndDown 1s 1s infinite alternate linear;
+    -webkit-animation: upAndDown 1s 1s infinite alternate linear;
+            animation: upAndDown 1s 1s infinite alternate linear;
     overflow: visible;
 }
 .bird-instance:nth-child(2),
@@ -87,51 +107,110 @@ body {
 }
 
 #right-wing {
-    animation: right-wing 1s 1s infinite alternate linear;
-    transform-origin: left;
+    -webkit-animation: right-wing 1s 1s infinite alternate linear;
+            animation: right-wing 1s 1s infinite alternate linear;
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left;
 }
 #left-wing {
-    animation: left-wing 1s infinite alternate linear;
-    transform-origin: center bottom;
+    -webkit-animation: left-wing 1s infinite alternate linear;
+            animation: left-wing 1s infinite alternate linear;
+    -webkit-transform-origin: center bottom;
+        -ms-transform-origin: center bottom;
+            transform-origin: center bottom;
     transform-box: fill-box;
 }
 
 /* Bird */
-@keyframes slidebird {
+@-webkit-keyframes slidebird {
     from {
-        transform: translateX(-100vw) !important;
+        -webkit-transform: translateX(-100vw) !important;
+                transform: translateX(-100vw) !important;
     }
     to {
-        transform: translateX(120vw);
+        -webkit-transform: translateX(120vw);
+                transform: translateX(120vw);
+    }
+}
+@keyframes slidebird {
+    from {
+        -webkit-transform: translateX(-100vw) !important;
+                transform: translateX(-100vw) !important;
+    }
+    to {
+        -webkit-transform: translateX(120vw);
+                transform: translateX(120vw);
+    }
+}
+@-webkit-keyframes fade {
+    20% {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translate(0, -20px) rotate(-30deg);
+                transform: translate(0, -20px) rotate(-30deg);
+        opacity: 0;
     }
 }
 @keyframes fade {
     20% {
-        transform: translateX(0);
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
         opacity: 1;
     }
     100% {
-        transform: translate(0, -20px) rotate(-30deg);
+        -webkit-transform: translate(0, -20px) rotate(-30deg);
+                transform: translate(0, -20px) rotate(-30deg);
         opacity: 0;
+    }
+}
+@-webkit-keyframes upAndDown {
+    from {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+    to {
+        -webkit-transform: translateY(25px);
+                transform: translateY(25px);
     }
 }
 @keyframes upAndDown {
     from {
-        transform: translateY(0);
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
     }
     to {
-        transform: translateY(25px);
+        -webkit-transform: translateY(25px);
+                transform: translateY(25px);
+    }
+}
+@-webkit-keyframes right-wing {
+    to {
+        -webkit-transform: rotateX(171deg);
+                transform: rotateX(171deg);
     }
 }
 @keyframes right-wing {
     to {
-        transform: rotateX(171deg);
+        -webkit-transform: rotateX(171deg);
+                transform: rotateX(171deg);
+    }
+}
+
+@-webkit-keyframes left-wing {
+    to {
+        -webkit-transform: rotateX(171deg) rotate(41deg);
+                transform: rotateX(171deg) rotate(41deg);
     }
 }
 
 @keyframes left-wing {
     to {
-        transform: rotateX(171deg) rotate(41deg);
+        -webkit-transform: rotateX(171deg) rotate(41deg);
+                transform: rotateX(171deg) rotate(41deg);
     }
 }
 /* END BIRD */
@@ -165,7 +244,8 @@ body {
     top: -58px;
     width: 100%;
     z-index: 3;
-    animation: sidetoside 1s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55) alternate;
+    -webkit-animation: sidetoside 1s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55) alternate;
+            animation: sidetoside 1s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55) alternate;
 }
 .content1 .text {
     text-align: center;
@@ -176,7 +256,8 @@ body {
     background-color: white;
     border-radius: 0 0 19px 19px;
     color: #1b96d0;
-    box-shadow: 0 7px 8px #0000007a;
+    -webkit-box-shadow: 0 7px 8px #0000007a;
+            box-shadow: 0 7px 8px #0000007a;
     padding: 9px 5px;
 }
 .foto1,
@@ -185,14 +266,16 @@ body {
     margin: 0 auto;
 }
 .wrap {
-    animation: goyang 1s infinite cubic-bezier(0.4, 0, 1, 1) alternate;
+    -webkit-animation: goyang 1s infinite cubic-bezier(0.4, 0, 1, 1) alternate;
+            animation: goyang 1s infinite cubic-bezier(0.4, 0, 1, 1) alternate;
 }
 .foto1 {
     width: 80%;
     max-width: 339px;
     min-width: 219px;
     border-radius: 19px 19px 0 0;
-    box-shadow: 0 0px 8px #0000007a;
+    -webkit-box-shadow: 0 0px 8px #0000007a;
+            box-shadow: 0 0px 8px #0000007a;
 }
 
 .content1 .cake {
@@ -201,6 +284,8 @@ body {
     margin: 10px auto;
 }
 button {
+    background-image: -webkit-gradient(linear, right bottom, left top, from(#ff009c), to(#ff94b4));
+    background-image: -o-linear-gradient(bottom right, #ff009c, #ff94b4);
     background-image: linear-gradient(to top left, #ff009c, #ff94b4);
     padding: 7px 20px;
     margin: 0 auto;
@@ -209,7 +294,8 @@ button {
     font-weight: 600;
     color: white;
     border: 2px solid white;
-    animation: bounceButton 0.5s ease infinite alternate;
+    -webkit-animation: bounceButton 0.5s ease infinite alternate;
+            animation: bounceButton 0.5s ease infinite alternate;
     display: block;
     z-index: 3;
     position: relative;
@@ -225,7 +311,13 @@ button {
     background: rgba(0, 0, 0, 0.575);
     display: none;
     opacity: 0;
-    animation: fadeIn 1s forwards;
+    -webkit-animation: fadeIn 1s forwards;
+            animation: fadeIn 1s forwards;
+}
+@-webkit-keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }
 @keyframes fadeIn {
     to {
@@ -243,14 +335,25 @@ button {
     margin-top: 19vh;
     background: #fafafa;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transform: translateX(-999px);
-    animation: swipe 1s forwards;
+    -webkit-transform: translateX(-999px);
+        -ms-transform: translateX(-999px);
+            transform: translateX(-999px);
+    -webkit-animation: swipe 1s forwards;
+            animation: swipe 1s forwards;
+}
+@-webkit-keyframes swipe {
+    to {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
 }
 @keyframes swipe {
     to {
-        transform: translateX(0);
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
     }
 }
 .paper:before {
@@ -260,10 +363,12 @@ button {
     bottom: 0;
     left: 0;
     width: 40px;
+    background: -o-radial-gradient(#575450 6px, transparent 7px) repeat-y;
     background: radial-gradient(#575450 6px, transparent 7px) repeat-y;
     background-size: 30px 30px;
     border-right: 3px solid #d44147;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 .paper-content {
     position: absolute;
@@ -271,6 +376,7 @@ button {
     right: 0;
     bottom: 30px;
     left: 40px;
+    background: -o-linear-gradient(transparent, transparent 28px, #91d1d3 28px);
     background: linear-gradient(transparent, transparent 28px, #91d1d3 28px);
     background-size: 30px 30px;
 }
@@ -288,7 +394,8 @@ button {
     font-family: "Handlee", cursive;
     font-weight: bold;
     font-size: 17px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     z-index: 1;
 }
 .paper-content img:first-child {
@@ -297,20 +404,37 @@ button {
     left: 11px;
     width: 100px;
     opacity: 0;
-    transform: translateY(19px);
-    animation: stiker 1.5s 5.5s forwards;
+    -webkit-transform: translateY(19px);
+        -ms-transform: translateY(19px);
+            transform: translateY(19px);
+    -webkit-animation: stiker 1.5s 5.5s forwards;
+            animation: stiker 1.5s 5.5s forwards;
 }
 .paper-content img:nth-child(2) {
     position: absolute;
     bottom: -39px;
     right: -99px;
     width: 100px;
-    animation: nobita 1.5s 5.5s forwards;
+    -webkit-animation: nobita 1.5s 5.5s forwards;
+            animation: nobita 1.5s 5.5s forwards;
+}
+@-webkit-keyframes stiker {
+    to {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+    }
 }
 @keyframes stiker {
     to {
         opacity: 1;
-        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+    }
+}
+@-webkit-keyframes nobita {
+    to {
+        right: -19px;
     }
 }
 @keyframes nobita {
@@ -319,25 +443,57 @@ button {
     }
 }
 
+@-webkit-keyframes bounceButton {
+    to {
+        -webkit-transform: translateY(8px);
+                transform: translateY(8px);
+    }
+}
+
 @keyframes bounceButton {
     to {
-        transform: translateY(8px);
+        -webkit-transform: translateY(8px);
+                transform: translateY(8px);
+    }
+}
+@-webkit-keyframes sidetoside {
+    to {
+        -webkit-transform: rotate(-5deg);
+                transform: rotate(-5deg);
     }
 }
 @keyframes sidetoside {
     to {
-        transform: rotate(-5deg);
+        -webkit-transform: rotate(-5deg);
+                transform: rotate(-5deg);
+    }
+}
+@-webkit-keyframes goyang {
+    0% {
+        -webkit-transform: rotate(5deg);
+                transform: rotate(5deg);
+    }
+    50% {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+    }
+    100% {
+        -webkit-transform: rotate(-5deg);
+                transform: rotate(-5deg);
     }
 }
 @keyframes goyang {
     0% {
-        transform: rotate(5deg);
+        -webkit-transform: rotate(5deg);
+                transform: rotate(5deg);
     }
     50% {
-        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
     }
     100% {
-        transform: rotate(-5deg);
+        -webkit-transform: rotate(-5deg);
+                transform: rotate(-5deg);
     }
 }
 
