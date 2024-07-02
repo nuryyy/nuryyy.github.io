@@ -4,10 +4,13 @@ const paper = document.querySelector(".paper");
 // TYPE WRITE PROPERTY
 const textArea = document.querySelector(".pesan");
 const message = `~ untuk: Nury Rachma Dhiani ☺️🐡
+haloo...selamat ulang tahun yaa🥳🥳🥳 
+selamat giginya udah rata kwkwk.
+semoga sehat selalu, kuliah nya lancar, dan dapet temen-temen yang baik ammin.
+semangat terus ya anak rantau 💥🎊🎉🌟⭐
 
-🐣🐤🐥
 
-                                       `;
+                                    dari: santoso 🐈`;
 let i = 0;
 // ================
 
